@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Library System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Online Library System</h1>
+        <div class="mb-4">
+            <a href="https://media.cntraveler.com/photos/568ae16967dc82253d9f72b1/master/pass/Mortlock-Library-Australia-Alamy.jpg" class="btn btn-primary">Home</a>
+            &nbsp;&nbsp;
+            <a href="../search_book" class="btn btn-success">Search Books</a>
+        </div>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

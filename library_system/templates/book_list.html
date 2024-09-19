@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <!-- <th>Category</th> -->
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.description }}</td>
+            <!-- <td>{{ book.category }}</td> -->
+            <td>
+                {% if book.borrowed %}
+                    Borrowed
+                {% else %}
+                    Available
+                {% endif %}
+            </td>
+            <td>
+                {% if book.borrowed %}
+                    <a href="{% url 'return_book' book.id %}" class="btn btn-warning">Return</a>
+                {% else %}
+                    <a href="{% url 'borrow_book' book.id %}" class="btn btn-success">Borrow</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
